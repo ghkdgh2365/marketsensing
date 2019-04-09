@@ -1,0 +1,23 @@
+<% if @list.exists? %>
+    <%= @list.last.category %>
+    <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">제목</th>
+              <th scope="col">URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @list.each do |l| %>
+                <tr>
+                      <th scope="column"><%= l.id %></th>
+                      <td><%= l.title %></td>
+                      <td><a href="<%= l.url %>"><%= l.url %></td>
+                </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+<% end %>
